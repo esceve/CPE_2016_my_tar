@@ -25,7 +25,7 @@ t_file_content		*extract_data(char **file_content, int count)
   int fd;
   t_file_content *data_file;
   struct stat filestat;
-  int toto;
+  unsigned long toto;
 
   i = 1;
   fd = 0;
@@ -34,8 +34,9 @@ t_file_content		*extract_data(char **file_content, int count)
     {
       // fd = open(file_content[i], O_RDONLY);
       stat(file_content[i], &filestat);
+      toto = filestat.st_size;
       printf("filecontent[%d] : %s\n", i, file_content[i] );
-      printf("filesize : %lu\n", filestat.st_size);
+      printf("filesize : %lu\n", toto);
       close (fd);
       i++;
     }

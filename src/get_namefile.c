@@ -33,13 +33,12 @@ while (i != count_file)
 	i++;
 }
 
-i = 0;
+i = 1;
 
 while (i != count_file)
 {
 	printf("value of list_file[%d] : %s\n", i, list_file[i]);
 	i++;
 }
-
 return (list_file);
 }

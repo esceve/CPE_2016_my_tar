@@ -23,7 +23,7 @@ int main(int ac, char **av)
     }
   if (ac > 2)
     {
-      printf("in function\n");
       list_file = get_filename(av, ac);
+      extract_data(list_file, ac);
     }
 }

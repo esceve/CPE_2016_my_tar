@@ -12,6 +12,7 @@ CFLAGS	= 	-Wall -Wextra -g
 
 SRC	=	./src/main.c				\
 		./src/get_namefile.c		\
+		./src/extract_data.c		\
 
 OBJ	=	$(SRC:.c=.o)
 

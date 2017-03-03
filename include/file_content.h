@@ -35,8 +35,4 @@ typedef struct	s_file_content
   char		prefix[167];
 }		t_file_content;
 
-void		my_init_char(char *str, int size);
-t_my_file	*my_fill_struct(struct stat *buf, char *name);
-void		my_display_all(t_my_file *my_file, FILE *file);
-
 #endif /* FILE_CONTENT_H_ */

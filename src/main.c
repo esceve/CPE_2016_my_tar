@@ -11,6 +11,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include "../include/include.h"
 
 int main(int ac, char **av)
 {
@@ -23,6 +24,6 @@ int main(int ac, char **av)
   if (ac > 2)
     {
       printf("in function\n");
-      list_file = get_namefile(av, ac -1);
+      list_file = get_filename(av, ac);
     }
 }

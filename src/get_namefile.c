@@ -20,12 +20,25 @@ char **get_filename(char **arg_file, int count_file)
 	int i;
 
 	size_file = 0;
-	i = 0;
-list_file = malloc(sizeof(char) * count_file);
+	i = 1;
+list_file = malloc(sizeof(char*) * count_file);
 while (i != count_file)
 {
-	size_file = strlen(arg_file[count_file]);
-	printf()
+	size_file = strlen(arg_file[i]);
+	// printf("[DEBUG] size of file : %d\n", size_file);
+	list_file[i] = malloc(sizeof(char) * size_file);
+	// printf("[DEBUG]value of arg_file[%d] : %s\n", i, arg_file[i]);
+	list_file[i] = arg_file[i];
+	// printf("[DEBUG]value of list_file[%d] : %s\n", i, list_file[i]);
+	i++;
+}
+
+i = 0;
+
+while (i != count_file)
+{
+	printf("value of list_file[%d] : %s\n", i, list_file[i]);
+	i++;
 }
 
 return (list_file);

@@ -24,16 +24,20 @@ t_file_content		*extract_data(char **file_content, int count)
   int i;
   int fd;
   t_file_content *data_file;
-  struct stat stat;
+  struct stat filestat;
+  int toto;
 
   i = 1;
   fd = 0;
   data_file = malloc(sizeof(t_file_content) * (count - 1));
   while (i != count)
     {
-      fd = open(file_content[i], O_RDONLY);
-      fstat(fd, stat->st_size);
+      // fd = open(file_content[i], O_RDONLY);
+      stat(file_content[i], &filestat);
+      printf("filecontent[%d] : %s\n", i, file_content[i] );
+      printf("filesize : %lu\n", filestat.st_size);
       close (fd);
+      i++;
     }
 
   return (data_file);

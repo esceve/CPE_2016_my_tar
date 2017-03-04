@@ -18,6 +18,7 @@
 typedef struct	s_file_content
 {
   char		name[100];
+  char		*data;
   char		mode[8];
   char		uid[8];
   char		gid[8];

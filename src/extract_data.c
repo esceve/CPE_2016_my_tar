@@ -27,7 +27,8 @@ t_file_content		*extract_data(char **file_content, int count)
   struct stat filestat;
   char *buffer;
 
-  i = 1;
+  printf("ok\n");
+  i = 2;
   fd = 0;
   data_file = malloc(sizeof(t_file_content) * (count - 1));
   while (i != count)
@@ -35,11 +36,14 @@ t_file_content		*extract_data(char **file_content, int count)
       open(file_content[i], O_RDONLY);
       stat(file_content[i], &filestat);
       data_file[i].size = filestat.st_size;
-      buffer = malloc(sizeof(char) * data_file[i].size);
+      buffer = malloc(sizeof(char) * data_file[i].size + 1);
       read(fd, buffer, data_file[i].size);
+      data_file[i].data = malloc(sizeof(char) * data_file[i].size);
+      printf("ok\n");
+      data_file[i].data = buffer;
       printf("filecontent[%d] : %s\n", i, file_content[i]);
       printf("filesize : %lu\n", data_file[i].size);
-      printf("value of filecontent[%d] : %s\n", i, buffer);
+      printf("value of filecontent[%d] : %s\n", i, data_file[i].data);
       close(fd);
       i++;
     }

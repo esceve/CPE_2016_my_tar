@@ -34,7 +34,7 @@ t_file_content		*extract_data(char **file_content, int count)
   while (i != count)
     {
       test = open(file_content[i], O_RDONLY);
-      error_extract(test);
+      error_extract(test, filecontent[i]);
       stat(file_content[i], &filestat);
       data_file[i].size = filestat.st_size;
       buffer = malloc(sizeof(char) * data_file[i].size + 1);

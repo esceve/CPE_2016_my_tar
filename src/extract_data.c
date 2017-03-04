@@ -1,3 +1,4 @@
+
 /*
 ** extract_data.c for my_tar in /home/esceve/EPITECH/CPE/CPE_2016_my_tar/src
 **
@@ -5,7 +6,7 @@
 ** Login   <esceve@epitech.net>
 **
 ** Started on  Fri Mar  3 23:50:21 2017
-** Last update Sat Mar  4 00:49:33 2017 Augustin Lopacinski
+** Last update Fri Mar  3 23:50:21 2017
 */
 
 #include "../include/include.h"
@@ -24,25 +25,15 @@ t_file_content		*extract_data(char **file_content, int count)
   int fd;
   t_file_content *data_file;
   struct stat filestat;
-<<<<<<< HEAD
-  int test;
-  
-=======
   char *buffer;
 
   printf("ok\n");
->>>>>>> 3d5e2d180881a2ad119c2b05a62034921ca8bae3
   i = 2;
   fd = 0;
   data_file = malloc(sizeof(t_file_content) * (count - 1));
   while (i != count)
     {
-<<<<<<< HEAD
-      test = open(file_content[i], O_RDONLY);
-      error_extract(test);
-=======
       open(file_content[i], O_RDONLY);
->>>>>>> 3d5e2d180881a2ad119c2b05a62034921ca8bae3
       stat(file_content[i], &filestat);
       data_file[i].size = filestat.st_size;
       buffer = malloc(sizeof(char) * data_file[i].size + 1);

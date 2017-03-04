@@ -11,6 +11,11 @@
 #ifndef INCLUDE_H_
 #define INCLUDE_H_
 
-char **get_filename(char **, int);
+#include "./file_content.h"
+
+char		**get_filename(char **, int);
+void		error_extract(int);
+t_file_content	*extract_data(char **, int);
+
 
 #endif /* INCLUDE */

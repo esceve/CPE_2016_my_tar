@@ -33,7 +33,7 @@ file = NULL;
     while (i != ac)
     {
       printf("name : %s\n",file[i].name);
-      printf("size : %lu\n",file[i].size);
+      printf("size : %s\n",file[i].size);
       printf("data : %s\n\n",file[i].data);
       i++;
     }

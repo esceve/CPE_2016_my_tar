@@ -40,3 +40,6 @@ test
 my_archive
 *#
 *~
+file*
+random
+my_unarchive

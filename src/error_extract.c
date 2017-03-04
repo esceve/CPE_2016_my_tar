@@ -5,7 +5,7 @@
 ** Login   <Spaciwork@epitech.net>
 ** 
 ** Started on  Sat Mar  4 00:22:42 2017 Augustin Lopacinski
-** Last update Sat Mar  4 00:45:05 2017 Augustin Lopacinski
+** Last update Sat Mar  4 01:42:39 2017 Augustin Lopacinski
 */
 
 #include "../include/include.h"
@@ -17,11 +17,11 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 
-void	error_extract(int test)
+void	error_extract(int test,char *file)
 {
   if (test == -1)
     {
-      printf("file not found");
+      printf("file not found: %s\n", file);
       exit(84);
     }
 }

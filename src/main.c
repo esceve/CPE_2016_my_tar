@@ -19,6 +19,8 @@ int main(int ac, char **av)
 t_file_content *file;
 file = NULL;
   char **list_file;
+
+  printf("[INFO] start program !\n");
   if (ac < 3)
     {
       printf("Usage: ./my_archive [archive_name] [files ...]\n");
@@ -29,13 +31,6 @@ file = NULL;
       file = extract_data(list_file, ac);
       pop_data(file, ac, av[1]);
     }
-    // int i = 2;
-    // while (i != ac)
-    // {
-    //   // printf("name : %s\n",file[i].name);
-    //   // printf("size : %s\n",file[i].size);
-    //   // printf("data : %s\n\n",file[i].data);
-    //   // i++;
-    // }
+    printf( "[INFO] program end without error !\n");
     return (0);
 }

@@ -18,7 +18,7 @@ char	**get_filename(char **arg_file, int count_file)
   char	**list_file;
   int	size_file;
   int i;
-
+printf("[INFO] in get_filename\n");
   size_file = 0;
   i = 2;
   list_file = malloc(sizeof(char*) * count_file);

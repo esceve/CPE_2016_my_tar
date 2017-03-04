@@ -26,28 +26,25 @@ void		pop_data(t_file_content *file, int count, char *file_name)
 
   i = 2;
   size = 0;
-  // printf("file name : %s\n",file_name );
+  printf( "[INFO] create and open file named  : %s\n", file_name);
   fp = fopen(file_name, "w+");
   while (i != count)
     {
-      printf("filename : %s\n", file[i].name);
+      printf("[INFO] archived file : %s\n", file[i].name);
+      printf("[DEBUG] put name\n");
       size = strlen(file[i].name) + 1;
       fwrite(&size, sizeof(size), 1, fp);
       fwrite(file[i].name, 1, size, fp);
-
+      printf( "[DEBUG] put size\n");
       size = strlen(file[i].size) + 1;
       fwrite(&size, sizeof(size), 1, fp);
       fwrite(file[i].size, 1, size, fp);
-
+      printf( "[DEBUG] put data\n");
       size = strlen(file[i].data) + 1;
       fwrite(&size, sizeof(size), 1, fp);
       fwrite(file[i].data, 1, size, fp);
-
-      // fwrite(&file[i], sizeof(t_file_content), 1, fp);
-      // fwrite(&file[i].name, sizeof(t_file_content), 1, fp);
-      // fwrite(&file[i].size, sizeof(t_file_content), 1, fp);
-      // fwrite(&file[i].data, sizeof(t_file_content), 1, fp);
       i++;
     }
   fclose(fp);
+  printf( "[INFO] close file named : %s\n", file_name);
 }

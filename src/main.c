@@ -5,7 +5,7 @@
 ** Login   <esceve@epitech.net>
 **
 ** Started on  Fri Mar  3 21:18:05 2017
-** Last update Fri Mar  3 21:18:05 2017
+** Last update Sat Mar  4 12:58:35 2017 Augustin Lopacinski
 */
 
 #include <unistd.h>
@@ -16,8 +16,8 @@
 
 int main(int ac, char **av)
 {
-t_file_content *file;
-file = NULL;
+  t_file_content *file;
+  file = NULL;
   char **list_file;
 
   printf("[INFO] start program !\n");

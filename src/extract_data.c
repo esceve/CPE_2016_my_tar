@@ -6,7 +6,7 @@
 ** Login   <esceve@epitech.net>
 **
 ** Started on  Fri Mar  3 23:50:21 2017
-** Last update Fri Mar  3 23:50:21 2017
+** Last update Sat Mar  4 01:42:52 2017 Augustin Lopacinski
 */
 
 #include "../include/include.h"
@@ -34,7 +34,7 @@ t_file_content		*extract_data(char **file_content, int count)
   while (i != count)
     {
       test = open(file_content[i], O_RDONLY);
-      error_extract(test);
+      error_extract(test, file_con);
       stat(file_content[i], &filestat);
       data_file[i].size = filestat.st_size;
       buffer = malloc(sizeof(char) * data_file[i].size + 1);

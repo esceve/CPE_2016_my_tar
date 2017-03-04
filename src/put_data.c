@@ -16,13 +16,22 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+#include <string.h>
 
-void		pop_data(t_file_content *file, int count)
+void		pop_data(t_file_content *file, int count, char *file_name)
 {
+	FILE *fp;
 	int i;
 
 	i = 0;
-	while (i != count)
+	printf("file name : %s\n",file_name );
+	fp = fopen(file_name, "w+");
+		while (i != count)
 	{
+		fwrite(&file[i].name, sizeof(t_file_content), 1, fp);
+		fwrite(&file[i].size, sizeof(t_file_content), 1, fp);
+		fwrite(&file[i].data, sizeof(t_file_content), 1, fp);
+		i++;
 	}
+	fclose(fp);
 }

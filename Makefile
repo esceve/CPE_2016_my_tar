@@ -14,6 +14,7 @@ SRC	=	./src/main.c				\
 		./src/get_namefile.c		\
 		./src/extract_data.c		\
 		./src/error_extract.c		\
+		./src/put_data.c			\
 
 OBJ	=	$(SRC:.c=.o)
 

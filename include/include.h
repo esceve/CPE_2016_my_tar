@@ -16,6 +16,7 @@
 char		**get_filename(char **, int);
 void		error_extract(int,char *);
 t_file_content	*extract_data(char **, int);
+void		pop_data(t_file_content *, int , char *);
 
 
 #endif /* INCLUDE */

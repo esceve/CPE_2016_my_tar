@@ -27,14 +27,15 @@ file = NULL;
     {
       list_file = get_filename(av, ac);
       file = extract_data(list_file, ac);
+      pop_data(file, ac - 1, av[1]);
     }
-
-    int i = 2;
-    while (i != ac)
-    {
-      printf("name : %s\n",file[i].name);
-      printf("size : %s\n",file[i].size);
-      printf("data : %s\n\n",file[i].data);
-      i++;
-    }
+    // int i = 2;
+    // while (i != ac)
+    // {
+    //   printf("name : %s\n",file[i].name);
+    //   printf("size : %s\n",file[i].size);
+    //   printf("data : %s\n\n",file[i].data);
+    //   i++;
+    // }
+    return (0);
 }

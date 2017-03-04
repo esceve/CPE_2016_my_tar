@@ -5,18 +5,18 @@
 ## Login   <esceve@epitech.net>
 ##
 ## Started on  Thu Feb  16 14:54:21 2017
-## Last update Sat Mar  4 13:18:29 2017 Augustin Lopacinski
+## Last update Sat Mar 04 13:34:23 2017 
 ##
 
-CFLAGS	= 	-Wall -Wextra -g
+CFLAGS	= 	-Wall -Wextra -g -Iinclude/ -O3 -fstack-protector --machine=avx
 
-SRC	=	./src/main.c				\
-		./src/get_namefile.c		\
-		./src/extract_data.c		\
-		./src/error_extract.c		\
-		./src/put_data.c		\
+SRC	=	archive/src/main.c				\
+		archive/src/get_namefile.c		\
+		archive/src/extract_data.c		\
+		archive/src/error_extract.c		\
+		archive/src/put_data.c			\
 
-SRC2	=	./src2/main.c		\
+SRC2	=	unarchive/src/main.c
 
 OBJ	=	$(SRC:.c=.o)
 
@@ -26,7 +26,7 @@ NAME	=	my_archive
 
 NAME2	=	my_unarchive
 
-all:	$(NAME) $(NAME2)
+all:	$(NAME)  $(NAME2)
 
 $(NAME):	$(OBJ)
 	gcc -o $(NAME) $(OBJ)

@@ -12,10 +12,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "../include/include.h"
+#include "../include/file_content.h"
 
 int main(int ac, char **av)
 {
-
+t_file_content *file;
+file = NULL;
   char **list_file;
   if (ac < 3)
     {
@@ -24,6 +26,15 @@ int main(int ac, char **av)
   if (ac > 2)
     {
       list_file = get_filename(av, ac);
-      extract_data(list_file, ac);
+      file = extract_data(list_file, ac);
+    }
+
+    int i = 2;
+    while (i != ac)
+    {
+      printf("name : %s\n",file[i].name);
+      printf("size : %lu\n",file[i].size);
+      printf("data : %s\n\n",file[i].data);
+      i++;
     }
 }

@@ -22,7 +22,7 @@ typedef struct	s_file_content
   char		mode[8];
   char		uid[8];
   char		gid[8];
-  int		size;
+unsigned long		size;
   char		mtime[12];
   char		chksum[8];
   char		typeflag;

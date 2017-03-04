@@ -24,19 +24,36 @@ t_file_content		*extract_data(char **file_content, int count)
   int fd;
   t_file_content *data_file;
   struct stat filestat;
+<<<<<<< HEAD
   int test;
   
+=======
+  char *buffer;
+
+  printf("ok\n");
+>>>>>>> 3d5e2d180881a2ad119c2b05a62034921ca8bae3
   i = 2;
   fd = 0;
   data_file = malloc(sizeof(t_file_content) * (count - 1));
   while (i != count)
     {
+<<<<<<< HEAD
       test = open(file_content[i], O_RDONLY);
       error_extract(test);
+=======
+      open(file_content[i], O_RDONLY);
+>>>>>>> 3d5e2d180881a2ad119c2b05a62034921ca8bae3
       stat(file_content[i], &filestat);
-      printf("filecontent[%d] : %s\n", i, file_content[i] );
-      printf("filesize : %lu\n", filestat.st_size);
-      close (fd);
+      data_file[i].size = filestat.st_size;
+      buffer = malloc(sizeof(char) * data_file[i].size + 1);
+      read(fd, buffer, data_file[i].size);
+      data_file[i].data = malloc(sizeof(char) * data_file[i].size);
+      printf("ok\n");
+      data_file[i].data = buffer;
+      printf("filecontent[%d] : %s\n", i, file_content[i]);
+      printf("filesize : %lu\n", data_file[i].size);
+      printf("value of filecontent[%d] : %s\n", i, data_file[i].data);
+      close(fd);
       i++;
     }
 

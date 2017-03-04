@@ -20,7 +20,7 @@ char	**get_filename(char **arg_file, int count_file)
   int i;
 
   size_file = 0;
-  i = 1;
+  i = 2;
   list_file = malloc(sizeof(char*) * count_file);
   while (i != count_file)
     {

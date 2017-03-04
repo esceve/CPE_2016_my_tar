@@ -17,6 +17,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+#include <string.h>
 
 
 t_file_content		*extract_data(char **file_content, int count)
@@ -34,13 +35,16 @@ t_file_content		*extract_data(char **file_content, int count)
   while (i != count)
     {
       test = open(file_content[i], O_RDONLY);
-      error_extract(test, filecontent[i]);
+      error_extract(test, file_content[i]);
       stat(file_content[i], &filestat);
       data_file[i].size = filestat.st_size;
-      buffer = malloc(sizeof(char) * data_file[i].size + 1);
-      read(fd, buffer, data_file[i].size);
+      data_file[i].name = malloc(sizeof(char) * strlen(file_content[i]));
+      data_file[i].name = file_content[i];
+      buffer = malloc(sizeof(char) * data_file[i].size);
+      read(test, buffer, data_file[i].size);
       data_file[i].data = malloc(sizeof(char) * data_file[i].size);
       data_file[i].data = buffer;
+      printf("file name : %s\n", );
       printf("filecontent[%d] : %s\n", i, file_content[i]);
       printf("filesize : %lu\n", data_file[i].size);
       printf("value of filecontent[%d] : %s\n", i, data_file[i].data);

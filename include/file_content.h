@@ -17,12 +17,12 @@
 
 typedef struct	s_file_content
 {
-  char		name[100];
+  char		*name;
   char		*data;
   char		mode[8];
   char		uid[8];
   char		gid[8];
-  unsigned long		size;
+  int		size;
   char		mtime[12];
   char		chksum[8];
   char		typeflag;

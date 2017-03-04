@@ -14,7 +14,7 @@
 #include "./file_content.h"
 
 char		**get_filename(char **, int);
-void		error_extract(int);
+void		error_extract(int,char *);
 t_file_content	*extract_data(char **, int);
 
 
